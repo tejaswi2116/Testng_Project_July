@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+  <groups>
+  <define name="1st group">
+  
+  <include name="@Smoke"/>
+   <include name="@Sanity"/>
+ 
+ </define>
+  <define name="2nd group">
+  
+  <include name="@E2E"/>
+   <include name="@Retest"/>
+  </define>
+  
+  <run>
+  
+  <include name="1st group"/>
+  
+  </run>
+  
+  </groups>
+    <classes>
+      <class name="org.mav.Groups"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
